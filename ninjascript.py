@@ -2,6 +2,14 @@ import pandas as pd
 import re
 import matplotlib.pyplot as plt
 
+def rec_remover():
+    for elem in models_scan:
+        model = re.sub(r"REC-", "", elem)
+        count = data.SKU.value_counts()[elem]
+        models_list.append(model)
+        counts_list.append(count)
+        print(model, count)
+
 # import and save the SERIAL, SKU columns from csv
 data = pd.read_csv('assets/DT_export.csv', usecols=['SERIAL', 'SKU'])
 
@@ -16,12 +24,9 @@ for i in data.SKU:
 counts_list = []
 models_list = []
 
-for elem in models_scan:
-    model = re.sub(r"REC-", "", elem)
-    count = data.SKU.value_counts()[elem]
-    models_list.append(model)
-    counts_list.append(count)
-    print(model, count)
+rec_remover()
+
+
 
 # Pandas datafram from the counts/models lists
 df = pd.DataFrame(columns=['MODELS', 'COUNT'])
