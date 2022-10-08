@@ -1,18 +1,9 @@
 import pandas as pd
 import re
-import pyperclip
 import matplotlib.pyplot as plt
-import easygui
-
-# Select file dialog popup
-path = easygui.fileopenbox()
 
 # import and save the SERIAL, SKU columns from csv
-data = pd.read_csv(path, usecols=['SERIAL', 'SKU'])
-
-# this printout is a visual failsafe to compare clipboard contents
-serials_col = list(data['SERIAL'])
-print(serials_col)
+data = pd.read_csv('assets/DT_export.csv', usecols=['SERIAL', 'SKU'])
 
 # create a list of the unique models in receiving format
 models_scan = []
@@ -36,15 +27,6 @@ for elem in models_scan:
 df = pd.DataFrame(columns=['MODELS', 'COUNT'])
 df['MODELS'] = models_list
 df['COUNT'] = counts_list
-
-# convert column contents to iterated string on new line
-# this will be proper format to paste into work website form
-clipboard = ''
-for s in data.SERIAL:
-    clipboard = clipboard + s + '\n'
-
-# copy clipboard variable to OS (system agnostic) clipboard
-pyperclip.copy(clipboard)
 
 # visuals
 plt.style.use('dark_background')
