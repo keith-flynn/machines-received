@@ -67,10 +67,12 @@ print(no_price[no_price['COST'].isna()])
 cost_vis = avg_merge
 cost_vis['TOTAL'] = cost_vis.apply(lambda x: x['COUNT'] * x['COST'], axis=1)
 print(cost_vis)
-print("Estimated total PO cost: $", cost_vis['TOTAL'].sum())
+total_cost = str(cost_vis['TOTAL'].sum())
+print("Estimated total PO cost: $" + total_cost)
 # Make a percentage column for cost_vis df. Each item in total column / total of whole column * 100 to play nice with charting
 cost_vis['TOTALPCT'] = cost_vis.apply(lambda x: (x['TOTAL'] / cost_vis['TOTAL'].sum()) * 100, axis=1)
 print(cost_vis)
+# Making sure these percentages add up to 100
 print(cost_vis['TOTALPCT'].sum())
 
 # visuals
@@ -82,11 +84,31 @@ plt.title('Machines Received')
 plt.tight_layout()
 plt.show()
 
-labels = cost_vis['MODELS']
-sizes = cost_vis['TOTALPCT']
-# NA
-explode = (0, 0.1)
+sorted_cost_vis = cost_vis.sort_values(by='TOTALPCT', ascending=False)
+labels = sorted_cost_vis['MODELS']
+sizes = sorted_cost_vis['TOTALPCT']
 
-fig1, ax1 = plt.subplots()
-ax1.pie(sizes, labels=labels)
+# Explode second largest wedge:
+# A loop to create a tuple that serves as the (pie chart wedge) explode function data
+# I realize an exploded wedge is meant to emphasize something,
+# but I simply like how it looks like pac-man every time and I wanted to make this feature scalable across datasets
+myexplode = ()
+for i in sorted_cost_vis['TOTALPCT']:
+    print(i)
+    if len(myexplode) == 1:
+        myexplode = myexplode + (0.2,)
+    else:
+        myexplode = myexplode + (0,)
+    print(myexplode)
+
+fig1, ax1, = plt.subplots()
+# I don't really understand the _, but it's needed to change the autotext color
+_, _, autotexts = ax1.pie(sizes, labels = labels, explode = myexplode, shadow=True, autopct='%1.1f%%', startangle=45)
+# Make inner text more readable
+for autotext in autotexts:
+    autotext.set_color('black')
+
+plt.suptitle('PO Cost Allocation')
+plt.title('Estimated Price: $' + total_cost)
+ax1.axis('equal')
 plt.show()
