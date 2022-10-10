@@ -12,7 +12,7 @@ def rec_remover():
         print(model, count)
 
 # import and save the SERIAL, SKU columns from csv
-data = pd.read_csv('assets/DT_export.csv', usecols=['SERIAL', 'SKU'])
+data = pd.read_csv('assets/DT_export(2).csv', usecols=['SERIAL', 'SKU'])
 
 # create a list of the unique models in receiving format
 models_scan = []
@@ -58,10 +58,16 @@ print(avg_merge)
 # Need to account for this with notification
 no_price = pd.merge(df, cost, how='left', indicator=False)
 
-print("**********************************")
-print("*  Machines with no cost basis:  *")
-print("**********************************")
-print(no_price[no_price['COST'].isna()])
+# check 'Ankit' exist in dataframe or not
+if no_price.COST.isnull().values.any():
+    print("****************************************")
+    print("*  Machines with no cost basis (NaN):  *")
+    print("****************************************")
+    print(no_price[no_price['COST'].isna()])
+else :
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("~  All machines received have existing cost basis.  ~")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
 # New cost of PO df to make a visualization with lambda fun
 cost_vis = avg_merge
@@ -94,12 +100,10 @@ sizes = sorted_cost_vis['TOTALPCT']
 # but I simply like how it looks like pac-man every time and I wanted to make this feature scalable across datasets
 myexplode = ()
 for i in sorted_cost_vis['TOTALPCT']:
-    print(i)
     if len(myexplode) == 1:
         myexplode = myexplode + (0.2,)
     else:
         myexplode = myexplode + (0,)
-    print(myexplode)
 
 fig1, ax1, = plt.subplots()
 # I don't really understand the _, but it's needed to change the autotext color
