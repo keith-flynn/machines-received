@@ -12,7 +12,7 @@ def rec_remover():
         print(model, count)
 
 # import and save the SERIAL, SKU columns from csv
-data = pd.read_csv('assets/DT_export(2).csv', usecols=['SERIAL', 'SKU'])
+data = pd.read_csv('assets/DT_export.csv', usecols=['SERIAL', 'SKU'])
 
 # create a list of the unique models in receiving format
 models_scan = []
@@ -58,7 +58,7 @@ print(avg_merge)
 # Need to account for this with notification
 no_price = pd.merge(df, cost, how='left', indicator=False)
 
-# check 'Ankit' exist in dataframe or not
+# Check for any machines with a NaN value in no_price dataframe
 if no_price.COST.isnull().values.any():
     print("****************************************")
     print("*  Machines with no cost basis (NaN):  *")
