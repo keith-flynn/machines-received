@@ -8,7 +8,7 @@
 ##### - from the command prompt, input `pip install pandas` and `pip install matplotlib` to add required modules
 ---
 ### **The basics:**
-A jupyter notebook that takes data from a purchase order and processes it to display relevant information. This code is not specific to one CSV, but is scalable to all CSV files generated in this format. My workplace's website export tool generates these CSVs with consistent formatting, and column titles are the main data manipulation methodology used.
+A jupyter notebook that takes data from a purchase order and processes it to display relevant information. This code is not specific to one CSV, but is scalable to all CSV files generated in this format. An export tool within my workplace's website generates these CSVs with consistent formatting, and column titles are the main data manipulation methodology used.
 ---
 ---
 ### *Project features:*
@@ -26,5 +26,7 @@ A jupyter notebook that takes data from a purchase order and processes it to dis
 > The machines-received repository is a "soft" fork of [ninjascripts](https://github.com/keith-flynn/ninjascripts/) and maintains the original upstream version's history.
 ---
 ##### Machine form factors: (**T**)ower, (**D**)esktop, (**S**)mall, (**U**)ltrasmall, (**M**)ini
+##### - Though not pictured here, Mini is the only form factor this example CSV contains.
+##### - They are typically less than half the size of an Ultrasmall form factor.
 ---
 <img src="https://www.dell.com/community/image/serverpage/image-id/22944i9A5AA4C46F5980DE?v=v2" width="400"/>
