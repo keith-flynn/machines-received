@@ -22,6 +22,8 @@ A jupyter notebook that takes data from a purchase order and processes it to dis
 ---
 ---
 ##### This final project for Code Kentucky Data Analysis I is a continuation of my functional work program <a href="https://github.com/keith-flynn/ninjascripts">ninjascripts</a>. My latest edition includes a file browser GUI to select which .csv file to import, and a section which automatically copies all of the serial numbers to the (system agnostic) operating system's clipboard. Both of these critical work functions are inoperable from within a jupyter notebook and had to be culled in order to operate properly. 
+- machines-received is a soft fork of ninjascripts and maintains the original upstream version's history.
 ---
-##### Machine form factors: **T**ower, **D**esktop, **S**mall, **U**ltrasmall, **M**ini
+##### Machine form factors: (**T**)ower, (**D**)esktop, (**S**)mall, (**U**)ltrasmall, (**M**)ini
 ---
+<img src="https://www.dell.com/community/image/serverpage/image-id/22944i9A5AA4C46F5980DE?v=v2" width="400"/>
