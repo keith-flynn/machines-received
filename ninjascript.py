@@ -12,7 +12,7 @@ def rec_remover():
         print(model, count)
 
 # import and save the SERIAL, SKU columns from csv
-data = pd.read_csv('assets/DT_export.csv', usecols=['SERIAL', 'SKU'])
+data = pd.read_csv('assets/DT_export(10749).csv', usecols=['SERIAL', 'SKU'])
 
 # create a list of the unique models in receiving format
 models_scan = []
