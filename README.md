@@ -15,7 +15,7 @@
  - Python 3.9
    - _Pandas_
    - _Matplotlib_
- - From the command line, input `pip install -r requirements.txt` to add required modules
+ - From the command line, input `pip install -r requirements.txt` from project directory to add required modules.
 ---
 ### **The Basics:**
 A jupyter notebook that takes data from a purchase order and processes it to display relevant information. This code is not specific to one CSV, but is scalable to all CSV files generated in this format. An export tool within my workplace's website generates these CSVs with consistent formatting, and column titles are the main data manipulation methodology used.
@@ -47,3 +47,7 @@ A jupyter notebook that takes data from a purchase order and processes it to dis
 ---
 ![sample-usdt](./assets/readme-img-source/sample-form-factors.png)
 ![sample-msd](./assets/readme-img-source/sample-form-factors2.png)
+---
+---
+## License
+[GNU GENERAL PUBLIC LICENSE](LICENSE)
