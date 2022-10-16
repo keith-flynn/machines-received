@@ -2,6 +2,14 @@
 
 ## Automate purchase order data visualizations
 ---
+## Project Overview:
+- Imports raw price data and cleans
+- Imports purchase order data and cleans
+- Produces useful information about purchase orders
+- Generates two visualizations:
+  - Bar graph of machine types received by total units
+  - Pie chart of which models account for total cost
+---
 ##### **Required packages**
 ##### - _Pandas_
 ##### - _Matplotlib_
@@ -21,6 +29,8 @@ A jupyter notebook that takes data from a purchase order and processes it to dis
 ### **In detail:**
  A cost basis CSV is first cleaned to be universally applicable to machines in their receiving format. Data from a received purchase order is then imported, cleaned, and made into a dataframe visualizing its makeup by number of machines. Cost values from the cost basis CSV are then merged to create a visualization for estimated total price and breakdown by model. The machines are then totaled by value using the average price, and a second visualization displays the projected average cost, along with a percentage representation of each model received.
 ---
+#### Sample Visualizations:
+![sample-bar](../assets/sample-bar.png?raw=true)
 ---
 ##### This final project for Code Kentucky Data Analysis I is a continuation of my functional work program [ninjascripts](https://github.com/keith-flynn/ninjascripts/). My latest edition includes a file browser GUI to select which .csv file to import, and a section which automatically copies all of the serial numbers to the [system agnostic] operating system's clipboard. Both of these critical work functions are inoperable from within a jupyter notebook and had to be culled in order to operate properly. 
 > The machines-received repository is a "soft" fork of [ninjascripts](https://github.com/keith-flynn/ninjascripts/) and maintains the original upstream version's history.
