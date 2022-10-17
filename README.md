@@ -15,17 +15,17 @@
  - Python 3.9
    - _Pandas_
    - _Matplotlib_
- - From the command line, input `pip install -r requirements.txt` from project directory to add required modules.
+ - From the command line, input `pip install -r requirements.txt` from within the project directory to add required modules.
 ---
 ### **The Basics:**
 A jupyter notebook that takes data from a purchase order and processes it to display relevant information. This code is not specific to one CSV, but is scalable to all CSV files generated in this format. An export tool within my workplace's website generates these CSVs with consistent formatting, and column titles are the main data manipulation methodology used.
 ---
 ---
 ### ***Project Features:***
-1. Read in data from a local csv
-2. Use built-in python, pandas, functions/lambdas to manipulate data
-3. Analyze with built-in python/pandas and custum functions
-4. Make basic plots with matplotlib
+1. Read in data from a local CSV
+2. Use built-in Python, Pandas, functions/lambdas to manipulate data
+3. Analyze with built-in Python/Pandas and custum functions
+4. Make basic plots with Matplotlib
 5. Markdown cells in Jupyter Notebook explaining throught process and code
 ---
 ### **In Detail:**
@@ -37,7 +37,7 @@ A jupyter notebook that takes data from a purchase order and processes it to dis
 ![sample-pie](./assets/readme-img-source/sample-pie.png)
 ---
 ---
-##### This final project for Code Kentucky Data Analysis I is a continuation of my functional work program [ninjascripts](https://github.com/keith-flynn/ninjascripts/). My latest edition includes a file browser GUI to select which .csv file to import, and a section which automatically copies all of the serial numbers to the [system agnostic] operating system's clipboard. Both of these critical work functions are inoperable from within a jupyter notebook and had to be culled in order to operate properly. 
+##### This final project for Code Kentucky Data Analysis I is a continuation of my functional work program [ninjascripts](https://github.com/keith-flynn/ninjascripts/). My latest edition includes a file browser GUI to select which CSV file to import, and a section which automatically copies all of the serial numbers to the [system agnostic] operating system's clipboard. Both of these critical work functions are inoperable from within a Jupyter Notebook and had to be culled in order to operate properly. 
 > The machines-received repository is a "soft" fork of [ninjascripts](https://github.com/keith-flynn/ninjascripts/) and maintains the original upstream version's history.
 ---
 ##### **Machine form factors from smallest to largest:**
