@@ -134,7 +134,8 @@ df_sorted = df.sort_values(by='COUNT', ascending=False)
 plt.figure(figsize=(10,7), dpi=80)
 plt.bar(df_sorted.MODEL, df_sorted.COUNT)
 plt.xticks(rotation=45, fontsize=13)
-plt.title('Machines Received')
+plt.title('Machines Received', fontsize=20)
+plt.ylabel('Number of Machines', fontsize=13)
 plt.tight_layout()
 plt.show()
 
@@ -161,7 +162,7 @@ _, _, autotexts = ax1.pie(sizes, labels = labels, explode = myexplode, shadow=Tr
 for autotext in autotexts:
     autotext.set_color('black')
 
-plt.suptitle('PO Cost Allocation')
+plt.suptitle('PO Cost Allocation', fontsize=20)
 plt.title('Estimated Price: $' + total_cost)
 ax1.axis('equal')
 plt.show()
