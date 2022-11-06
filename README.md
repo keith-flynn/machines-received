@@ -19,6 +19,8 @@
  - From the command line, input `pip install -r requirements.txt` from within the project directory to add required modules.
 ---
 ### **To Run:**
+The work is presented in [machines-received.ipynb](machines-received.ipynb)
+
 Launch Jupyter Notebook and navigate to the corresponding machines-received.ipynb file in the main folder of the repository.
 
 *If the user prefers to simply execute the script without reading all of the comments:*
@@ -56,6 +58,9 @@ These parts are displayed neatly in the Jupyter Notebook, and the raw code is pr
 ---
 ---
 ### ***Project Features:***
+
+[Full project feature fulfillment is documented in requirement-fulfillment.md](requirement-fulfillment.md)
+
 1. Read in data from a local CSV
 2. Use built-in Python, Pandas, functions/lambdas to manipulate data
 3. Analyze with built-in Python/Pandas and custum functions
