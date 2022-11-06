@@ -15,10 +15,44 @@
  - Python 3.9
    - _Pandas_
    - _Matplotlib_
+ - Jupyter Notebook 6.4.12
  - From the command line, input `pip install -r requirements.txt` from within the project directory to add required modules.
 ---
+### **To Run:**
+Launch Jupyter Notebook and navigate to the corresponding machines-received.ipynb file in the main folder of the repository.
+
+*If the user prefers to simply execute the script without reading all of the comments:*
+
+Windows:
+
+- from command line within directory, input `python -m machines-received.py`
+
+Linux/MacOS:
+
+- from bash within directory, input `python3 machines-received.py`
+
+---
 ### **The Basics:**
-A jupyter notebook that takes data from a purchase order and processes it to display relevant information. This code is not specific to one CSV, but is scalable to all CSV files generated in this format. An export tool within my workplace's website generates these CSVs with consistent formatting, and column titles are the main data manipulation methodology used.
+1. In Part 1 we import a CSV file with cost information for the different models of personal computers that we will be working with. This information is cleaned and analyzed to become a dataframe to reference in Part 2.
+
+2. In Part 2 we import a CSV file with a batch of machines that have just been received into the system. This data is cleaned and analyzed before importing prices from the dataframe in Part 1.
+
+3. The data is then analyzed and represented by two visualizations
+
+**The Jupyter Notebook is arranged in a very procedural presentation, and dataframes are printed liberally to demonstrate the changes which are occurring.**
+
+These parts are displayed neatly in the Jupyter Notebook, and the raw code is provided if the user prefers execution from the REPL.
+
+---
+
+*Some helpful terminology:*
+
+- **Purchase Order:** The batch of machines received under the same purchasing agreement. Purchase Orders are one of the means by which machines are tracked and accounting is calculated.
+- **SKU:** Stock Keeping Unit. This is a retail industry term for a unit of something that is being sold. SKUs are similar to UPCs (bar codes) in that they represent the item being sold in a market's database.
+
+  - In this program "SKU" will refer to the SKU's title, which will be a string. Example: 9020-M-I5
+  - Every product you buy from your local grocer to Amazon's marketplace has a corresponding SKU number attached to it that is kept track of by sales and inventory systems.
+
 ---
 ---
 ### ***Project Features:***
@@ -30,6 +64,7 @@ A jupyter notebook that takes data from a purchase order and processes it to dis
 ---
 ### **In Detail:**
  A cost basis CSV is first cleaned to be universally applicable to machines in their receiving format. Data from a received purchase order is then imported, cleaned, and made into a dataframe visualizing its makeup by number of machines. Cost values from the cost basis CSV are then merged to create a visualization breakdown by model. The machines are then totaled by value using the averaged price, and a second visualization displays the projected average cost, along with a percentage representation of each model received.
+
 ---
 ---
 #### *Sample Visualizations*:
