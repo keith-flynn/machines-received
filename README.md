@@ -1,6 +1,8 @@
 # Machines Received
 
 ## Automate purchase order data visualizations
+[Full project feature fulfillment for Code Kentucky Data Analysis I is documented here, in requirement-fulfillment.md](requirement-fulfillment.md)
+
 ---
 ## Project Overview:
 - Imports raw price data and cleans
@@ -12,10 +14,10 @@
   - Pie chart of which models account for total cost
 ---
 **Code and Resources Used**
- - Python 3.9
+ - Python 3.9+
    - _Pandas_
    - _Matplotlib_
- - Jupyter Notebook 6.4.12
+ - Jupyter Notebook 6.4.12+
  - From the command line, input `pip install -r requirements.txt` from within the project directory to add required modules.
 ---
 ### **To Run:**
