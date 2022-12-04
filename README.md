@@ -1,7 +1,7 @@
 # Machines Received
 
 ## Automate purchase order data visualizations
-[Full project feature fulfillment for Code Kentucky Data Analysis I is documented here, in requirement-fulfillment.md](requirement-fulfillment.md)
+
 
 ---
 ## Project Overview:
