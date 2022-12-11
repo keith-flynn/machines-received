@@ -41,8 +41,8 @@ data = pd.read_csv('assets/DT_export.csv', usecols=['SERIAL', 'SKU'])
 # create a list of the unique models in receiving format
 models_scan = []
 for i in data.SKU:
-    if i not in models_scan:
-        models_scan.append(i)
+    if i not in Cleaner.models_scan:
+        Cleaner.models_scan.append(i)
 
 # iterate through models list removing receiving format
 # and add total count
@@ -55,8 +55,10 @@ Cleaner.rec_remover(data)
 
 # Pandas datafram from the counts/models lists
 df = pd.DataFrame(columns=['MODEL', 'COUNT'])
-df['MODEL'] = models_list
-df['COUNT'] = counts_list
+df['MODEL'] = Cleaner.models_list
+df['COUNT'] = Cleaner.counts_list
+
+df2 = df
 
 # Bring in cost data
 cost = pd.read_csv('assets/cost_clean.csv', usecols=['Model SKU', 'Current Base Line Cost', 'MODEL'])
