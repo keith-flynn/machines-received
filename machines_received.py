@@ -4,22 +4,27 @@ import matplotlib.pyplot as plt
 from clean_serials_tools import Cleaner
 
 # Check data types of columns
+print("test 1 : csv dtypes")
 print(pd.read_csv('assets/DT_export(baseline_model_cost).csv').dtypes)
 
 # Import csv (specific columns)
 cost_csv_raw = pd.read_csv('assets/DT_export(baseline_model_cost).csv', usecols=['Model SKU', 'Current Base Line Cost'])
+print("test 2 : cost_csv_raw")
 print(cost_csv_raw)
 
 # Find highest price
 # Later Addition: we now know the two highest are outliers. Adjusting trim range below to accomodate.
+print("test 3 : cost_csv_raw max")
 print(cost_csv_raw.max())
 
 # Trim to range
 cost_adjusted_range = cost_csv_raw[cost_csv_raw['Current Base Line Cost'].between(1, 301)]
+print("test 4 : cost_adjusted_range")
 print(cost_adjusted_range)
 
 # Sort by price high to low
 cost_sorted = cost_adjusted_range.sort_values(by='Current Base Line Cost', ascending=False)
+print("test 5 : cost_sorted")
 print(cost_sorted)
 
 # Much later addition: After working on main body of project, more cleaning needed
@@ -30,6 +35,7 @@ cleaner_column = []
 for mod in cost_sorted['Model SKU']:
     cleaner_column.append(Cleaner.simple_i(mod))
 cost_sorted['MODEL'] = cleaner_column
+print("test 6 : cost_sorted")
 print(cost_sorted)
 
 # Save to new csv for inspection
@@ -46,8 +52,10 @@ for i in data.SKU:
 
 # iterate through models list removing receiving format
 # and add total count
-counts_list = []
-models_list = []
+
+# There two columns are legacy
+#counts_list = []
+#models_list = []
 
 # Call function to remove "REC-" leading model names
 # Prints machine quantities to the terminal to be copied/pasted for a follow-up email to the boss
@@ -58,17 +66,17 @@ df = pd.DataFrame(columns=['MODEL', 'COUNT'])
 df['MODEL'] = Cleaner.models_list
 df['COUNT'] = Cleaner.counts_list
 
-df2 = df
-
 # Bring in cost data
 cost = pd.read_csv('assets/cost_clean.csv', usecols=['Model SKU', 'Current Base Line Cost', 'MODEL'])
 
 # Rename long-winded column name which has lowercase letters to better fit
 cost.rename(columns = {'Model SKU' : 'MODELS', 'Current Base Line Cost' : 'COST'}, inplace=True)
+print("test 7 : cost")
 print(cost)
 
 # df.join(cost)
 test_merge = pd.merge(df, cost)
+print("test 8 : test_merge")
 print(test_merge)
 
 # Group machines by AVERAGE price of model if multiple costs exist
@@ -78,6 +86,7 @@ avg_merge = test_merge.groupby(['MODEL'], as_index=False).mean(numeric_only=True
 # Making these columns whole numbers
 avg_merge.COST = avg_merge.COST.astype(int)
 avg_merge.COUNT = avg_merge.COUNT.astype(int)
+print("test 9 : avg_merge")
 print(avg_merge)
 
 # 3070 mini i7 model doesn't have a base cost yet. 
@@ -99,13 +108,16 @@ else :
 # New cost of PO df to make a visualization with lambda fun
 cost_vis = avg_merge
 cost_vis['TOTAL'] = cost_vis.apply(lambda x: x['COUNT'] * x['COST'], axis=1)
+print("test 10 : cost_vis")
 print(cost_vis)
 total_cost = str(cost_vis['TOTAL'].sum())
 print("Estimated total PO cost: $" + total_cost)
 # Make a percentage column for cost_vis df. Each item in total column / total of whole column * 100 to play nice with charting
 cost_vis['TOTALPCT'] = cost_vis.apply(lambda x: (x['TOTAL'] / cost_vis['TOTAL'].sum()) * 100, axis=1)
+print("test 11 : cost_vis again")
 print(cost_vis)
 # Making sure these percentages add up to 100
+print("test 12 : cost_vis totalpct column")
 print(cost_vis['TOTALPCT'].sum())
 
 # visuals
