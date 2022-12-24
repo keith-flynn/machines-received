@@ -2,8 +2,8 @@
 
 ## Automate purchase order data visualizations
 
-
 ---
+
 ## Project Overview:
 - Imports raw price data and cleans
 - Imports purchase order data and cleans
@@ -12,15 +12,20 @@
 - Generates two visualizations:
   - Bar graph of machine types received by total units
   - Pie chart of which models account for total cost
+
 ---
+
 **Code and Resources Used**
  - Python 3.9+
    - _Pandas_
    - _Matplotlib_
  - Jupyter Notebook 6.4.12+
  - From the command line, input `pip install -r requirements.txt` from within the project directory to add required modules.
+
 ---
+
 ### **To Run:**
+
 The work is presented in [machines-received.ipynb](machines-received.ipynb)
 
 Launch Jupyter Notebook and navigate to the corresponding machines-received.ipynb file in the main folder of the repository.
@@ -29,14 +34,16 @@ Launch Jupyter Notebook and navigate to the corresponding machines-received.ipyn
 
 Windows:
 
-- from command line within directory, input `python -m machines-received.py`
+- from command line within the 'Scripts' directory, input `python -m main.py`
 
 Linux/MacOS:
 
-- from bash within directory, input `python3 machines-received.py`
+- from bash within the 'Scripts' directory, input `python3 main.py`
 
 ---
+
 ### **The Basics:**
+
 1. In Part 1 we import a CSV file with cost information for the different models of personal computers that we will be working with. This information is cleaned and analyzed to become a dataframe to reference in Part 2.
 
 2. In Part 2 we import a CSV file with a batch of machines that have just been received into the system. This data is cleaned and analyzed before importing prices from the dataframe in Part 1.
@@ -45,7 +52,7 @@ Linux/MacOS:
 
 **The Jupyter Notebook is arranged in a very procedural presentation, and dataframes are printed liberally to demonstrate the changes which are occurring.**
 
-These parts are displayed neatly in the Jupyter Notebook, and the raw code is provided if the user prefers execution from the REPL.
+The presentation is displayed neatly in the Jupyter Notebook. The raw code has been refactored and modularized if the user prefers execution from the REPL.
 
 ---
 
