@@ -3,11 +3,6 @@ from machines_received import POMassager
 
 class ChartTime():
 
-    # Make a percentage column for cost_vis df. Each item in total column / total of whole column * 100 to play nice with charting
-    POMassager.cost_vis['TOTALPCT'] = POMassager.cost_vis.apply(lambda x: (x['TOTAL'] / POMassager.cost_vis['TOTAL'].sum()) * 100, axis=1)
-    print("test 5 : cost_vis again")
-    print(POMassager.cost_vis)
-
     # visuals
     plt.style.use('dark_background')
     df_sorted = POMassager.df.sort_values(by='COUNT', ascending=False)
@@ -18,6 +13,11 @@ class ChartTime():
     plt.ylabel('Number of Machines', fontsize=13)
     plt.tight_layout()
     plt.show()
+
+    # Make a percentage column for cost_vis df. Each item in total column / total of whole column * 100 to play nice with charting
+    POMassager.cost_vis['TOTALPCT'] = POMassager.cost_vis.apply(lambda x: (x['TOTAL'] / POMassager.cost_vis['TOTAL'].sum()) * 100, axis=1)
+    print("ChartTime test 1/1 : cost_vis again")
+    print(POMassager.cost_vis)
 
     sorted_cost_vis = POMassager.cost_vis.sort_values(by='TOTALPCT', ascending=False)
     labels = sorted_cost_vis['MODEL']
