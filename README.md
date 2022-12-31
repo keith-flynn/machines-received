@@ -2,9 +2,10 @@
 
 ## Automate purchase order data visualizations
 
----
+Any meaningful updates will be in the Scripts/ directory. The narrative, functional Jupyter Notebook that is the story of writing this project for Code Kentucky will remain in the main folder.
 
 ## Project Overview:
+
 - Imports raw price data and cleans
 - Imports purchase order data and cleans
 - Merges dataframes 
